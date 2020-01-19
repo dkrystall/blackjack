@@ -34,7 +34,7 @@ while (playing):
         playing = False
 
     def split_hand():
-        print "hand length is:", len(player.hand)
+        print("hand length is:", len(player.hand))
         first_card = player.hand[0][0]
         second_card = player.hand[0][1]
         player.hand[0] = []
@@ -43,7 +43,7 @@ while (playing):
         player.hand[1].append(second_card)
         player.hand[0].append(deck.deal_card())
         player.hand[1].append(deck.deal_card())
-        print "hand length is:", len(player.hand)
+        print ("hand length is:", len(player.hand))
 
     def print_card(card_face, suit):
         card_face_str = str(card_face).split('.')[1].lower()
@@ -67,27 +67,27 @@ while (playing):
         plater_card_2 = print_card(
             CardFace(player.hand[0][1].value), Suit(suit2))
 
-        print "You have a", player_card_1, "and a", plater_card_2
-        print "Dealer is showing a "+ print_card(
-            CardFace(dealer.hand[0][1].value), Suit(dealer.hand[0][1].suit))
+        print("You have a", player_card_1, "and a", plater_card_2)
+        print( "Dealer is showing a "+ print_card(
+            CardFace(dealer.hand[0][1].value), Suit(dealer.hand[0][1].suit)))
 
         in_game = True
         player_turn_over = False
 
         def print_hand(hand):
             for card in hand[0]:
-                print card
+                print(card)
 
         turn = 0
         while (in_game):
             player.score = 0
             # print_hand(player.hand[0])
-            print "You have: "
+            print("You have: ")
             for card in player.hand[0]:
                 this_suit = card.suit
                 this_card = print_card(CardFace(card.value), Suit(this_suit))
-                print this_card
-            print "\n"
+                print(this_card)
+            print("\n")
 
             for card in player.hand[0]:
                 if card.value == 1:
